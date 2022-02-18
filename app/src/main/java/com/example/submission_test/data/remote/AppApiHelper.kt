@@ -1,5 +1,6 @@
 package com.example.submission_test.data.remote
 
+import com.example.submission_test.data.model.api.genre.GenreResponse
 import javax.inject.Inject
 
 
@@ -9,7 +10,6 @@ import javax.inject.Inject
 class AppApiHelper @Inject constructor(
     private val apiService: ApiService
 ) : ApiHelper {
-
-//    override suspend fun getMoviesApiCall() = apiService.getMovies()
+    override suspend fun getGenre(): GenreResponse = apiService.getGenre()
 
 }

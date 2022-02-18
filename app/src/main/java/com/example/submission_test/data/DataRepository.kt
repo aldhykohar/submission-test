@@ -11,9 +11,8 @@ class DataRepository @Inject constructor(
     private val appDataManager: AppDataManager
 ) : BaseRepository() {
 
-    /** Remote Data - Fetch API **/
-    /*suspend fun getMoviesApiCall() = safeApiCall {
-        appDataManager.getMoviesApiCall()
-    }*/
+    suspend fun getGenre() = safeApiCall {
+        appDataManager.getGenre()
+    }
 
 }
