@@ -2,9 +2,11 @@ package com.example.submission_test.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.example.submission_test.R
 import com.example.submission_test.data.model.api.genre.GenresItem
 import com.example.submission_test.databinding.ItemListGenreBinding
 
@@ -13,8 +15,16 @@ import com.example.submission_test.databinding.ItemListGenreBinding
  * Find me on my Github -> https://github.com/im-o
  **/
 
-class GenreAdapter(var onClick: (GenresItem) -> Unit) :
+class GenreAdapter(var onClick: (GenresItem, Int) -> Unit) :
     ListAdapter<GenresItem, GenreAdapter.ViewHolder>(DIFF_CALLBACK) {
+
+    private var selectedPosition: Int = 0
+
+    fun setSelectedPos(value: Int) {
+        selectedPosition = value
+        notifyItemRangeChanged(0, currentList.size)
+    }
+
 
     inner class ViewHolder(private val binding: ItemListGenreBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -22,7 +32,15 @@ class GenreAdapter(var onClick: (GenresItem) -> Unit) :
             with(binding) {
                 genreTV.text = item.name
 
-                root.setOnClickListener { onClick(item) }
+                if (selectedPosition == adapterPosition) {
+                    parentLL.setBackgroundColor(root.context.getColor(R.color.purple_500))
+                    genreTV.setTextColor(root.context.getColor(R.color.white))
+                } else {
+                    genreTV.setTextColor(root.context.getColor(R.color.purple_500))
+                    parentLL.setBackgroundColor(root.context.getColor(R.color.white))
+                }
+
+                root.setOnClickListener { onClick(item, adapterPosition) }
             }
         }
     }

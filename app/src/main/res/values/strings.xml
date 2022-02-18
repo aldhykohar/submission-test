@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">submission_test</string>
+    <string name="app_name">Movies</string>
     <string name="retry">Retry</string>
     <string name="no_internet">No Internet Connection</string>
     <string name="some_error">Some Error</string>
