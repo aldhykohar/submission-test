@@ -126,12 +126,24 @@
                     android:id="@+id/videoRV"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:layout_marginTop="@dimen/space_8"
+                    android:orientation="horizontal"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintTop_toBottomOf="@id/videosTEXT"
                     tools:itemCount="4"
                     tools:listitem="@layout/item_list_videos" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/reviewMB"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:letterSpacing="0"
+                    android:paddingVertical="@dimen/space_16"
+                    android:text="@string/review"
+                    android:textAllCaps="false"
+                    app:layout_constraintTop_toBottomOf="@+id/videoRV"
+                    tools:layout_editor_absoluteX="16dp" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

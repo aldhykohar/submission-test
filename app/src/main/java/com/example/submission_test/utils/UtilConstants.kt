@@ -9,6 +9,7 @@ object UtilConstants {
     const val LOG_MESSAGE = "LOG_MESSAGE"
     const val EXTRA_MOVIE = "EXTRA_MOVIE"
     const val EXTRA_MOVIE_VIDEO = "EXTRA_MOVIE_VIDEO"
+    const val ID_MOVIE = "ID_MOVIE"
 
     //INT
     const val OTHER_ERROR = 999

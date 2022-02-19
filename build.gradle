@@ -7,6 +7,8 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        maven { url "https://jitpack.io"}
+        maven { url "https://plugins.gradle.org/m2/" }
     }
     dependencies {
         classpath "com.android.tools.build:gradle:7.0.3"
@@ -44,4 +46,5 @@ ext {
     kotlin_coroutines_version = '1.5.0'
     glide_version = '4.11.0'
     androidyoutubeplayer_version = '10.0.5'
+    circleimageview_version = '3.1.0'
 }

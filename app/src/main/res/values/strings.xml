@@ -6,4 +6,5 @@
     <string name="description">Description</string>
     <string name="videos">Videos</string>
     <string name="todo">TODO</string>
+    <string name="review">Review</string>
 </resources>

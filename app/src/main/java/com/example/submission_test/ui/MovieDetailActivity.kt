@@ -9,6 +9,7 @@ import com.example.submission_test.databinding.ActivityMovieDetailBinding
 import com.example.submission_test.ui.adapter.MovieVideoAdapter
 import com.example.submission_test.utils.UtilConstants.EXTRA_MOVIE
 import com.example.submission_test.utils.UtilConstants.EXTRA_MOVIE_VIDEO
+import com.example.submission_test.utils.UtilConstants.ID_MOVIE
 import com.example.submission_test.utils.UtilConstants.PATH_IMAGE
 import com.example.submission_test.utils.UtilExtensions.bindImage
 import com.example.submission_test.utils.UtilExtensions.openActivity
@@ -18,6 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class MovieDetailActivity : BaseActivity<ActivityMovieDetailBinding>() {
 
     private val viewModel by viewModels<MovieViewModel>()
+    private var idMovie: Int? = null
 
     private val videoAdapter: MovieVideoAdapter by lazy {
         MovieVideoAdapter {
@@ -32,17 +34,27 @@ class MovieDetailActivity : BaseActivity<ActivityMovieDetailBinding>() {
 
     override fun initView() {
         initDataIntent()
+        initClick()
     }
 
     private fun initDataIntent() {
         val movieResult = intent.getParcelableExtra<MovieResult?>(EXTRA_MOVIE)
         movieResult?.let {
+            idMovie = it.id
             viewModel.getMovieVideos(it.id ?: 0)
             with(binding) {
                 bindImage(movieIV, PATH_IMAGE + it.posterPath)
                 titleTV.text = it.title
                 rateTV.text = it.voteAverage.toString()
                 descTV.text = it.overview
+            }
+        }
+    }
+
+    private fun initClick() {
+        binding.reviewMB.setOnClickListener {
+            openActivity(ReviewActivity::class.java) {
+                idMovie?.let { id -> putInt(ID_MOVIE, id) }
             }
         }
     }

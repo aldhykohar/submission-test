@@ -91,4 +91,5 @@ dependencies {
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_viewmodels"
 
     implementation "com.pierfrancescosoffritti.androidyoutubeplayer:core:$androidyoutubeplayer_version"
+    implementation "de.hdodenhof:circleimageview:$circleimageview_version"
 }

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="@dimen/space_8"
     app:cardCornerRadius="@dimen/space_8"
     app:cardElevation="@dimen/space_0">
@@ -18,7 +19,7 @@
             android:layout_height="@dimen/space_80"
             android:contentDescription="@string/todo"
             android:scaleType="fitXY"
-            android:src="@drawable/no_image"
+            tools:src="@drawable/no_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
