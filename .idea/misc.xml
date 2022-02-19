@@ -3,12 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/DATA ALDI/Android/submission_test/app/src/main/res/drawable/ic_baseline_play_circle_24.xml" value="0.2" />
         <entry key="..\:/DATA ALDI/Android/submission_test/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/DATA ALDI/Android/submission_test/app/src/main/res/layout/activity_movie_detail.xml" value="0.2" />
+        <entry key="..\:/DATA ALDI/Android/submission_test/app/src/main/res/layout/activity_youtube_player.xml" value="0.10185185185185185" />
         <entry key="..\:/DATA ALDI/Android/submission_test/app/src/main/res/layout/dialog_progress.xml" value="0.1287037037037037" />
         <entry key="..\:/DATA ALDI/Android/submission_test/app/src/main/res/layout/item_grid_movies.xml" value="0.2" />
         <entry key="..\:/DATA ALDI/Android/submission_test/app/src/main/res/layout/item_list_genre.xml" value="0.25" />
-        <entry key="..\:/DATA ALDI/Android/submission_test/app/src/main/res/layout/item_list_videos.xml" value="0.18385416666666668" />
+        <entry key="..\:/DATA ALDI/Android/submission_test/app/src/main/res/layout/item_list_videos.xml" value="0.5" />
       </map>
     </option>
   </component>

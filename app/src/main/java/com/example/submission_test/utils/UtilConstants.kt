@@ -8,6 +8,7 @@ object UtilConstants {
     const val NO_INTERNET = "NO_INTERNET"
     const val LOG_MESSAGE = "LOG_MESSAGE"
     const val EXTRA_MOVIE = "EXTRA_MOVIE"
+    const val EXTRA_MOVIE_VIDEO = "EXTRA_MOVIE_VIDEO"
 
     //INT
     const val OTHER_ERROR = 999

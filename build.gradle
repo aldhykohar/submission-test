@@ -43,4 +43,5 @@ ext {
     hilt_viewmodels = '1.0.0-alpha03'
     kotlin_coroutines_version = '1.5.0'
     glide_version = '4.11.0'
+    androidyoutubeplayer_version = '10.0.5'
 }

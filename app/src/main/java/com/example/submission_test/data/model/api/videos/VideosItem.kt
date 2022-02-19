@@ -1,7 +1,10 @@
 package com.example.submission_test.data.model.api.videos
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class VideosItem(
 
 	@field:SerializedName("site")
@@ -33,4 +36,4 @@ data class VideosItem(
 
 	@field:SerializedName("key")
 	val key: String? = null
-)
+) : Parcelable

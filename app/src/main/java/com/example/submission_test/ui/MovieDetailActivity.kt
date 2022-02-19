@@ -8,8 +8,10 @@ import com.example.submission_test.data.network.DataResource
 import com.example.submission_test.databinding.ActivityMovieDetailBinding
 import com.example.submission_test.ui.adapter.MovieVideoAdapter
 import com.example.submission_test.utils.UtilConstants.EXTRA_MOVIE
+import com.example.submission_test.utils.UtilConstants.EXTRA_MOVIE_VIDEO
 import com.example.submission_test.utils.UtilConstants.PATH_IMAGE
 import com.example.submission_test.utils.UtilExtensions.bindImage
+import com.example.submission_test.utils.UtilExtensions.openActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -19,7 +21,9 @@ class MovieDetailActivity : BaseActivity<ActivityMovieDetailBinding>() {
 
     private val videoAdapter: MovieVideoAdapter by lazy {
         MovieVideoAdapter {
-
+            openActivity(YoutubePlayerActivity::class.java) {
+                putParcelable(EXTRA_MOVIE_VIDEO, it)
+            }
         }
     }
 
