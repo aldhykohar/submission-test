@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.submission_test.data.DataRepository
 import com.example.submission_test.data.model.api.genre.GenreResponse
 import com.example.submission_test.data.model.api.movie.MovieResponse
+import com.example.submission_test.data.model.api.review.MovieReviewResponse
 import com.example.submission_test.data.model.api.videos.MovieVideosResponse
 import com.example.submission_test.data.network.DataResource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -32,6 +33,9 @@ class MovieViewModel @Inject constructor(
     private val _movieVideos: MutableLiveData<DataResource<MovieVideosResponse>> = MutableLiveData()
     val movieVideos: LiveData<DataResource<MovieVideosResponse>> = _movieVideos
 
+    private val _movieReview: MutableLiveData<DataResource<MovieReviewResponse>> = MutableLiveData()
+    val movieReview: LiveData<DataResource<MovieReviewResponse>> = _movieReview
+
 
     fun getGenre() = viewModelScope.launch {
         _genre.value = DataResource.Loading
@@ -46,5 +50,10 @@ class MovieViewModel @Inject constructor(
     fun getMovieVideos(id: Int) = viewModelScope.launch {
         _movieVideos.value = DataResource.Loading
         _movieVideos.value = dataRepository.getMovieVideos(id)
+    }
+
+    fun getMovieReview(id: Int) = viewModelScope.launch {
+        _movieReview.value = DataResource.Loading
+        _movieReview.value = dataRepository.getMovieReview(id)
     }
 }

@@ -14,7 +14,7 @@
         android:padding="@dimen/space_16">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/circleImageView"
+            android:id="@+id/reviewedIV"
             android:layout_width="@dimen/space_80"
             android:layout_height="@dimen/space_80"
             app:layout_constraintStart_toStartOf="parent"
@@ -30,8 +30,8 @@
             android:textSize="@dimen/size_18"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/circleImageView"
-            app:layout_constraintTop_toTopOf="@+id/circleImageView"
+            app:layout_constraintStart_toEndOf="@+id/reviewedIV"
+            app:layout_constraintTop_toTopOf="@+id/reviewedIV"
             tools:text="Reviewed By" />
 
         <TextView
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/circleImageView"
+            app:layout_constraintStart_toEndOf="@+id/reviewedIV"
             app:layout_constraintTop_toBottomOf="@+id/reviewerNameTV"
             tools:text="on December" />
 
@@ -54,8 +54,9 @@
             android:maxLines="4"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/circleImageView"
+            app:layout_constraintStart_toEndOf="@+id/reviewedIV"
             app:layout_constraintTop_toBottomOf="@+id/reviewedDateTV"
+            app:layout_constraintVertical_bias="0.0"
             tools:text="@tools:sample/lorem/random" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

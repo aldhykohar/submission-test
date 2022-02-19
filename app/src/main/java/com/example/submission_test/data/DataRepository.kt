@@ -23,4 +23,8 @@ class DataRepository @Inject constructor(
         appDataManager.getMovieVideos(id)
     }
 
+    suspend fun getMovieReview(id: Int) = safeApiCall {
+        appDataManager.getMovieReview(id)
+    }
+
 }

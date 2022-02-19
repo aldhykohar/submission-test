@@ -2,6 +2,7 @@ package com.example.submission_test.data.remote
 
 import com.example.submission_test.data.model.api.genre.GenreResponse
 import com.example.submission_test.data.model.api.movie.MovieResponse
+import com.example.submission_test.data.model.api.review.MovieReviewResponse
 import com.example.submission_test.data.model.api.videos.MovieVideosResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -27,4 +28,10 @@ interface ApiService {
     suspend fun getMovieVideos(
         @Path("id") id: Int
     ): MovieVideosResponse
+
+
+    @GET("movie/{id}/reviews")
+    suspend fun getMovieReview(
+        @Path("id") id: Int
+    ): MovieReviewResponse
 }

@@ -13,6 +13,7 @@ object UtilConstants {
 
     //INT
     const val OTHER_ERROR = 999
+    const val QUERY_PAGE_SIZE = 20
 
     //API
     const val PATH_API_KEY = "api_key"

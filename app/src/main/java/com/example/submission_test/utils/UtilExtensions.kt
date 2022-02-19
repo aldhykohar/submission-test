@@ -11,12 +11,18 @@ import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.example.submission_test.R
 import com.google.android.material.snackbar.Snackbar
+import java.text.DateFormat
+import java.text.ParseException
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 /**
  * Created by aldhykohar on 2/18/2022.
  */
 object UtilExtensions {
+    private val localeID = Locale("in", "ID")
+
     fun <T> Context.openActivity(it: Class<T>, extras: Bundle.() -> Unit = {}) {
         val intent = Intent(this, it)
         intent.putExtras(Bundle().apply(extras))
@@ -45,8 +51,21 @@ object UtilExtensions {
         snackBar.show()
     }
 
-    fun TextView.setPaintFlag() {
-        this.paintFlags = paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+    fun String?.formatDate(): String? {
+        val date1: Date?
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS", Locale.getDefault())
+        val pattern = SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault())
+        return try {
+            date1 = dateFormat.parse(this ?: "")
+            if (date1 != null) {
+                pattern.format(date1)
+            } else {
+                ""
+            }
+        } catch (e: ParseException) {
+            e.printStackTrace()
+            ""
+        }
     }
 
     fun Context.bindImage(iv: ImageView, path: String?) {

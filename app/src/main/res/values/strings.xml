@@ -7,4 +7,6 @@
     <string name="videos">Videos</string>
     <string name="todo">TODO</string>
     <string name="review">Review</string>
+    <string name="reviewed_by">Reviewed by %s</string>
+    <string name="reviewed_on">Reviewed on %s</string>
 </resources>

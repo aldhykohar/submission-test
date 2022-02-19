@@ -67,11 +67,6 @@ object UtilFunctions {
         return BitmapFactory.decodeByteArray(decodedString, 0, decodedString.size)
     }
 
-    fun dateFormatterNormal(calendar: Calendar): String {
-        val sdf: DateFormat = SimpleDateFormat("EEEE, d MMMM yyy", localeID) // Sunday, 01 January 2021
-        return sdf.format(calendar.time)
-    }
-
     fun getCurrentTime(): String {
         val strFormat = "EEEE, d MMM yyyy"
         val dateFormat = SimpleDateFormat(strFormat, localeID)
