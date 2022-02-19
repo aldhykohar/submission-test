@@ -4,6 +4,7 @@ import androidx.activity.viewModels
 import com.example.submission_test.base.BaseActivity
 import com.example.submission_test.data.model.api.genre.GenreResponse
 import com.example.submission_test.data.model.api.genre.GenresItem
+import com.example.submission_test.data.model.api.movie.MovieResponse
 import com.example.submission_test.data.network.DataResource
 import com.example.submission_test.databinding.ActivityMainBinding
 import com.example.submission_test.utils.UtilExceptions.handleApiError
@@ -21,6 +22,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }
     }
 
+    private val adapterMovie: MovieAdapter by lazy {
+        MovieAdapter {
+        }
+    }
+
     override fun getViewBinding() = ActivityMainBinding.inflate(layoutInflater)
 
     override fun initView() {
@@ -35,6 +41,20 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 is DataResource.Failure -> showFailure(it)
             }
         })
+
+        viewModel.movies.observe(this, {
+            when (it) {
+                is DataResource.Loading -> {
+                }
+                is DataResource.Success -> updateUIMovie(it.value)
+                is DataResource.Failure -> showFailure(it)
+            }
+        })
+    }
+
+    private fun updateUIMovie(value: MovieResponse) {
+        adapterMovie.submitList(value.movieResults)
+        binding.moviesRV.adapter = adapterMovie
     }
 
     private fun updateUIGenre(value: GenreResponse) {

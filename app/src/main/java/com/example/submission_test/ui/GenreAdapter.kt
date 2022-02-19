@@ -11,9 +11,8 @@ import com.example.submission_test.data.model.api.genre.GenresItem
 import com.example.submission_test.databinding.ItemListGenreBinding
 
 /**
- * Created by rivaldy on 09/07/21
- * Find me on my Github -> https://github.com/im-o
- **/
+ * Created by aldhykohar on 2/18/2022.
+ */
 
 class GenreAdapter(var onClick: (GenresItem, Int) -> Unit) :
     ListAdapter<GenresItem, GenreAdapter.ViewHolder>(DIFF_CALLBACK) {
