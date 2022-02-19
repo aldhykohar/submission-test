@@ -32,6 +32,8 @@ interface ApiService {
 
     @GET("movie/{id}/reviews")
     suspend fun getMovieReview(
-        @Path("id") id: Int
+        @Path("id") id: Int,
+        @Query("page")
+        pageNumber: Int? = 1,
     ): MovieReviewResponse
 }

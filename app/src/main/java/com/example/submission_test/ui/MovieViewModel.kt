@@ -52,8 +52,8 @@ class MovieViewModel @Inject constructor(
         _movieVideos.value = dataRepository.getMovieVideos(id)
     }
 
-    fun getMovieReview(id: Int) = viewModelScope.launch {
+    fun getMovieReview(id: Int, page: Int) = viewModelScope.launch {
         _movieReview.value = DataResource.Loading
-        _movieReview.value = dataRepository.getMovieReview(id)
+        _movieReview.value = dataRepository.getMovieReview(id, page)
     }
 }

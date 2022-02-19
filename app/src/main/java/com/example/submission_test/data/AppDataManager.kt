@@ -19,6 +19,6 @@ class AppDataManager @Inject constructor(
         api.getMoviesByGenre(page, genre)
 
     override suspend fun getMovieVideos(id: Int): MovieVideosResponse = api.getMovieVideos(id)
-    override suspend fun getMovieReview(id: Int): MovieReviewResponse = api.getMovieReview(id)
+    override suspend fun getMovieReview(id: Int, page: Int): MovieReviewResponse = api.getMovieReview(id,page)
 
 }

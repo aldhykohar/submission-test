@@ -20,7 +20,7 @@ class AppApiHelper @Inject constructor(
     override suspend fun getMovieVideos(id: Int): MovieVideosResponse =
         apiService.getMovieVideos(id)
 
-    override suspend fun getMovieReview(id: Int): MovieReviewResponse =
+    override suspend fun getMovieReview(id: Int, page: Int): MovieReviewResponse =
         apiService.getMovieReview(id)
 
 }

@@ -13,5 +13,5 @@ interface ApiHelper {
     suspend fun getGenre(): GenreResponse
     suspend fun getMoviesByGenre(page: Int?, genre: Int): MovieResponse
     suspend fun getMovieVideos(id: Int): MovieVideosResponse
-    suspend fun getMovieReview(id: Int): MovieReviewResponse
+    suspend fun getMovieReview(id: Int,page:Int): MovieReviewResponse
 }
