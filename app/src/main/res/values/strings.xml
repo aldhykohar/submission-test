@@ -3,4 +3,6 @@
     <string name="retry">Retry</string>
     <string name="no_internet">No Internet Connection</string>
     <string name="some_error">Some Error</string>
+    <string name="description">Description</string>
+    <string name="videos">Videos</string>
 </resources>

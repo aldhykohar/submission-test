@@ -1,8 +1,11 @@
 package com.example.submission_test.data.model.api.movie
 
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class MovieResult(
     @SerializedName("adult")
     var adult: Boolean? = null,
@@ -32,4 +35,4 @@ data class MovieResult(
     var voteAverage: Double? = null,
     @SerializedName("vote_count")
     var voteCount: Int? = null
-)
+) : Parcelable

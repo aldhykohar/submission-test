@@ -26,7 +26,7 @@ class MovieAdapter(var onClick: (MovieResult) -> Unit) :
                 with(binding) {
                     root.context.bindImage(movieIV, PATH_IMAGE + item.backdropPath)
                     titleTV.text = item.title
-                    dateTV.text = item.releaseDate
+                    descTV.text = item.overview
                 }
 
                 root.setOnClickListener { onClick(item) }

@@ -7,6 +7,7 @@ package com.example.submission_test.utils
 object UtilConstants {
     const val NO_INTERNET = "NO_INTERNET"
     const val LOG_MESSAGE = "LOG_MESSAGE"
+    const val EXTRA_MOVIE = "EXTRA_MOVIE"
 
     //INT
     const val OTHER_ERROR = 999

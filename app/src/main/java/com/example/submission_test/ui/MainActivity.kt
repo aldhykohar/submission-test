@@ -7,7 +7,9 @@ import com.example.submission_test.data.model.api.genre.GenresItem
 import com.example.submission_test.data.model.api.movie.MovieResponse
 import com.example.submission_test.data.network.DataResource
 import com.example.submission_test.databinding.ActivityMainBinding
+import com.example.submission_test.utils.UtilConstants
 import com.example.submission_test.utils.UtilExceptions.handleApiError
+import com.example.submission_test.utils.UtilExtensions.openActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,6 +26,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     private val adapterMovie: MovieAdapter by lazy {
         MovieAdapter {
+            openActivity(MovieDetailActivity::class.java) {
+                putParcelable(UtilConstants.EXTRA_MOVIE, it)
+            }
         }
     }
 
