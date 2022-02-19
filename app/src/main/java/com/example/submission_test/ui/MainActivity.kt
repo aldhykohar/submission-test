@@ -7,6 +7,8 @@ import com.example.submission_test.data.model.api.genre.GenresItem
 import com.example.submission_test.data.model.api.movie.MovieResponse
 import com.example.submission_test.data.network.DataResource
 import com.example.submission_test.databinding.ActivityMainBinding
+import com.example.submission_test.ui.adapter.GenreAdapter
+import com.example.submission_test.ui.adapter.MovieAdapter
 import com.example.submission_test.utils.UtilConstants
 import com.example.submission_test.utils.UtilExceptions.handleApiError
 import com.example.submission_test.utils.UtilExtensions.openActivity

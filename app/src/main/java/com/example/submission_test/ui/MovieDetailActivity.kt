@@ -6,6 +6,7 @@ import com.example.submission_test.data.model.api.movie.MovieResult
 import com.example.submission_test.data.model.api.videos.MovieVideosResponse
 import com.example.submission_test.data.network.DataResource
 import com.example.submission_test.databinding.ActivityMovieDetailBinding
+import com.example.submission_test.ui.adapter.MovieVideoAdapter
 import com.example.submission_test.utils.UtilConstants.EXTRA_MOVIE
 import com.example.submission_test.utils.UtilConstants.PATH_IMAGE
 import com.example.submission_test.utils.UtilExtensions.bindImage
