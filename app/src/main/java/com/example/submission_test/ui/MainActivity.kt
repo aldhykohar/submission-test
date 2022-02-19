@@ -35,6 +35,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     override fun getViewBinding() = ActivityMainBinding.inflate(layoutInflater)
 
     override fun initView() {
+        viewModel.getGenre()
     }
 
     override fun initObservers() {

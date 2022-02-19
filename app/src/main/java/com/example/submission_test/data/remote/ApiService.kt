@@ -2,7 +2,9 @@ package com.example.submission_test.data.remote
 
 import com.example.submission_test.data.model.api.genre.GenreResponse
 import com.example.submission_test.data.model.api.movie.MovieResponse
+import com.example.submission_test.data.model.api.videos.MovieVideosResponse
 import retrofit2.http.GET
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 
@@ -20,4 +22,9 @@ interface ApiService {
         @Query("with_genres")
         genre: Int,
     ): MovieResponse
+
+    @GET("movie/{id}/videos")
+    suspend fun getMovieVideos(
+        @Path("id") id: Int
+    ): MovieVideosResponse
 }
