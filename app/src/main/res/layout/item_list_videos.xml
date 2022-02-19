@@ -13,13 +13,26 @@
 
 
         <ImageView
+            android:id="@+id/videoIV"
             android:layout_width="@dimen/space_120"
             android:layout_height="@dimen/space_80"
             android:contentDescription="@string/todo"
+            android:scaleType="fitXY"
             android:src="@drawable/no_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_baseline_play_circle_24"
+            app:layout_constraintBottom_toBottomOf="@+id/videoIV"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

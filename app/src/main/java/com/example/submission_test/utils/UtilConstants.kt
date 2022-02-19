@@ -15,6 +15,8 @@ object UtilConstants {
     //API
     const val PATH_API_KEY = "api_key"
     const val PATH_IMAGE = "https://image.tmdb.org/t/p/w500/"
+    const val PATH_VIDEO_THUMBNAIL = "https://img.youtube.com/vi/"
+    const val LAST_SEGMENT_VIDEO_THUMBNAIL = "/default.jpg"
     const val PATH_DEFAULT_LANG = "language"
     const val DEFAULT_LANG = "en-US"
 }

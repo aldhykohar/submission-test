@@ -3,6 +3,7 @@ package com.example.submission_test.ui
 import androidx.activity.viewModels
 import com.example.submission_test.base.BaseActivity
 import com.example.submission_test.data.model.api.movie.MovieResult
+import com.example.submission_test.data.model.api.videos.MovieVideosResponse
 import com.example.submission_test.data.network.DataResource
 import com.example.submission_test.databinding.ActivityMovieDetailBinding
 import com.example.submission_test.utils.UtilConstants.EXTRA_MOVIE
@@ -14,6 +15,12 @@ import dagger.hilt.android.AndroidEntryPoint
 class MovieDetailActivity : BaseActivity<ActivityMovieDetailBinding>() {
 
     private val viewModel by viewModels<MovieViewModel>()
+
+    private val videoAdapter: MovieVideoAdapter by lazy {
+        MovieVideoAdapter {
+
+        }
+    }
 
     override fun getViewBinding(): ActivityMovieDetailBinding =
         ActivityMovieDetailBinding.inflate(layoutInflater)
@@ -36,7 +43,19 @@ class MovieDetailActivity : BaseActivity<ActivityMovieDetailBinding>() {
     }
 
     override fun initObservers() {
+        viewModel.movieVideos.observe(this, {
+            when (it) {
+                is DataResource.Loading -> {
+                }
+                is DataResource.Success -> updateUIVideo(it.value)
+                is DataResource.Failure -> showFailure(it)
+            }
+        })
+    }
 
+    private fun updateUIVideo(value: MovieVideosResponse) {
+        videoAdapter.submitList(value.results)
+        binding.videoRV.adapter = videoAdapter
     }
 
     override fun showFailure(failure: DataResource.Failure) {
