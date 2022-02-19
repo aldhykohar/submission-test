@@ -5,4 +5,5 @@
     <string name="some_error">Some Error</string>
     <string name="description">Description</string>
     <string name="videos">Videos</string>
+    <string name="todo">TODO</string>
 </resources>
