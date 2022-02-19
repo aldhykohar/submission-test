@@ -15,8 +15,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     private val viewModel by viewModels<MovieViewModel>()
 
     private val adapterGenre: GenreAdapter by lazy {
-        GenreAdapter { genresItem: GenresItem, i: Int ->
+        GenreAdapter { genre: GenresItem, i: Int ->
             adapterGenre.setSelectedPos(i)
+            viewModel.getMovieByGenre(null, genre.id ?: 0)
         }
     }
 
@@ -39,6 +40,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     private fun updateUIGenre(value: GenreResponse) {
         adapterGenre.submitList(value.genres)
         binding.genreRV.adapter = adapterGenre
+        if (value.genres?.size!! > 1) {
+            viewModel.getMovieByGenre(null, value.genres[0]?.id ?: 0)
+        }
     }
 
     override fun showFailure(failure: DataResource.Failure) {

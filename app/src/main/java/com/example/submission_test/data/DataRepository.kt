@@ -15,4 +15,8 @@ class DataRepository @Inject constructor(
         appDataManager.getGenre()
     }
 
+    suspend fun getMoviesByGenre(page: Int?, genre: Int) = safeApiCall {
+        appDataManager.getMoviesByGenre(page, genre)
+    }
+
 }
