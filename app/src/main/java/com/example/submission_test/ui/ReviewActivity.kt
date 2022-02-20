@@ -1,5 +1,6 @@
 package com.example.submission_test.ui
 
+import android.os.Bundle
 import android.widget.AbsListView
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -11,6 +12,7 @@ import com.example.submission_test.data.network.DataResource
 import com.example.submission_test.databinding.ActivityReviewBinding
 import com.example.submission_test.ui.adapter.MovieReviewAdapter
 import com.example.submission_test.utils.UtilConstants
+import com.example.submission_test.utils.UtilConstants.EXTRA_REVIEW
 import com.example.submission_test.utils.UtilConstants.ID_MOVIE
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -28,7 +30,11 @@ class ReviewActivity : BaseActivity<ActivityReviewBinding>() {
 
     private val adapterReview: MovieReviewAdapter by lazy {
         MovieReviewAdapter {
-
+            val dialogDetail = DialogDetailReviewFragment()
+            val bundle = Bundle()
+            bundle.putParcelable(EXTRA_REVIEW, it)
+            dialogDetail.arguments = bundle
+            dialogDetail.show(supportFragmentManager, dialogDetail.tag)
         }
     }
 
