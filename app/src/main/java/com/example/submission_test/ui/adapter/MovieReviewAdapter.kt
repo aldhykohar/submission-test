@@ -31,7 +31,7 @@ class MovieReviewAdapter(var onClick: (ReviewsItem) -> Unit) :
                     val img = item.authorDetails?.avatarPath?.replaceFirst("/", "")
                     root.context.bindImage(reviewedIV, img)
                     reviewerNameTV.text =
-                        root.context.getString(R.string.reviewed_by, item.authorDetails?.name)
+                        root.context.getString(R.string.reviewed_by, item.authorDetails?.username)
                     reviewedDateTV.text =
                         root.context.getString(R.string.reviewed_on, item.createdAt.formatDate())
                     reviewTV.text = item.content
